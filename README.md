@@ -54,19 +54,3 @@ FastLang - студенческий стартап, разработанный �
 ## Наша цель
 
 Мы хотим сделать изучение иностранных языков более доступным и практичным, объединив общение, упражнения и учебные материалы в одном сервисе.
-
-
-## What's new in v4
-
-- **AI tutor** - a chat bubble on every lesson and course page. Set `ANTHROPIC_API_KEY` (and optionally `ANTHROPIC_MODEL`, default `claude-haiku-5-5`) before `node server.js` for full AI answers. Without a key a basic built-in tutor still explains the lesson, quizzes and gives memory tips. The tutor reads the real lesson page on the server, so it always knows what you are studying.
-- **Progress path** - each course overview is now a winding Duolingo-style path with locked / current / done lessons, an animated trail, XP and a day streak.
-- **Reward chest** - finishing every lesson unlocks the chest at the end of the path. Opening it grants coins (150 for the main courses, 250 for the advanced ones). A chest can only be opened once per course.
-- **Shop** (`shop.html`) - spend coins on Streak Freezes, path themes, chest skins and badges.
-- **Advanced courses** - Advanced English, Advanced Japanese and Advanced Italian (6 lessons each), linked from `courses.html`.
-
-Logged-in users have progress, coins and purchases saved on the server (in `data/users.json` or MongoDB). Guests keep them in the browser. All game rules live in `public/js/fl_core.js`, shared by the browser and the server. Courses and shop items are defined in `public/data/catalog.json`.
-
-```
-npm start                              # basic tutor
-ANTHROPIC_API_KEY=sk-ant-... npm start # full AI tutor
-```
